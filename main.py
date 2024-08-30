@@ -32,7 +32,7 @@ def main_menu(user):
             logout()
 
     if selected == "Home":
-        st.write("Bienvenido a HelPharma")
+        st.markdown(inf_home)
     elif selected == "Ordenar Informe de Banco":
         main_program()
     elif selected == "sumar recibos":
