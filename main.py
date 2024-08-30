@@ -33,7 +33,7 @@ def main_menu(user):
 
     if selected == "Home":
         st.write("Bienvenido a HelPharma")
-    elif selected == "Excel":
+    elif selected == "Ordenar Informe de Banco":
         main_program()
 
 def main():
