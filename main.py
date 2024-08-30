@@ -26,6 +26,7 @@ def main_menu(user):
         selected = option_menu(
             menu_title=None,
             options=["🏡 Inicio", "💹 Ordenar Informe de Banco", "💵 Sumar Recibos", "🔍 Buscar/Filtrar Datos"],
+            icons=["🏡", "💹", "💵", "🔍"],
             menu_icon="list",
             default_index=0
         )
