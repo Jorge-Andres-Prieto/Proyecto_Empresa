@@ -25,11 +25,12 @@ def main_menu(user):
     with st.sidebar:
         selected = option_menu(
             menu_title=None,
-            options=["Inicio", "Ordenar Informe de Banco", "Sumar Recibos"],
-            icons=["🏡", "💹", "💵"],
+            options=["Inicio", "Ordenar Informe de Banco", "Sumar Recibos", "Buscar/Filtrar Datos"],
+            icons=["house", "bar-chart", "cash", "search"],
             menu_icon="list",
             default_index=0
         )
+
         if st.button("Cerrar Sesión"):
             logout()
 
