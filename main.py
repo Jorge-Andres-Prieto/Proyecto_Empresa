@@ -21,15 +21,15 @@ def logout():
     st.session_state['username'] = None
     st.rerun()
 
-with st.sidebar:
-    selected = option_menu(
-        menu_title=None,
-        options=["🏡 Inicio", "💹 Ordenar Informe de Banco", "💵 Sumar Recibos", "🔍 Buscar/Filtrar Datos"],
-        icons=["", "", "", ""],  # Dejar esto vacío para que no interfiera
-        menu_icon="list",
-        default_index=0
-    )
-
+def main_menu(user):
+    with st.sidebar:
+        selected = option_menu(
+            menu_title=None,
+            options=["🏡 Inicio", "💹 Ordenar Informe de Banco", "💵 Sumar Recibos", "🔍 Buscar/Filtrar Datos"],
+            icons=["", "", "", ""],  # Dejar esto vacío para que no interfiera
+            menu_icon="list",
+            default_index=0
+        )
 
         if st.button("Cerrar Sesión"):
             logout()
