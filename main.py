@@ -26,7 +26,6 @@ def main_menu(user):
         selected = option_menu(
             menu_title=None,
             options=["🏡 Inicio", "💹 Ordenar Informe de Banco", "💵 Sumar Recibos", "🔍 Buscar/Filtrar Datos"],
-            icons=["", "", "", ""],  # Dejar esto vacío para que no interfiera
             menu_icon="list",
             default_index=0
         )
@@ -34,11 +33,11 @@ def main_menu(user):
         if st.button("Cerrar Sesión"):
             logout()
 
-    if selected == "Inicio":
+    if selected == "🏡 Inicio":
         st.markdown(inf_inicio)
-    elif selected == "Ordenar Informe de Banco":
+    elif selected == "💹 Ordenar Informe de Banco":
         main_program()
-    elif selected == "sumar recibos":
+    elif selected == "💵 Sumar Recibos":
         st.markdown(inf_inicio)
 
 
