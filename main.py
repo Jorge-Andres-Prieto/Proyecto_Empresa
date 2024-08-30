@@ -23,7 +23,7 @@ def main_menu(user):
     with st.sidebar:
         selected = option_menu(
             menu_title=None,
-            options=["Home", "Excel"],
+            options=["Home", "Ordenar Informe de Banco", ""],
             icons=["house", "file-earmark-excel"],
             menu_icon="list",
             default_index=0
