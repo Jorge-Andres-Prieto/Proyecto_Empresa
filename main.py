@@ -2,7 +2,9 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from login import login
 from leer_archivo import main_program
-from Home import inf_home
+from inicio import inf_inicio
+
+
 # Configuración del tema
 st.set_page_config(
     page_title="HelPharma",
@@ -23,7 +25,7 @@ def main_menu(user):
     with st.sidebar:
         selected = option_menu(
             menu_title=None,
-            options=["Home", "Ordenar Informe de Banco", "Sumar Recibos"],
+            options=["Inicio", "Ordenar Informe de Banco", "Sumar Recibos"],
             icons=["🏡", "💹", "💵"],
             menu_icon="list",
             default_index=0
@@ -31,12 +33,12 @@ def main_menu(user):
         if st.button("Cerrar Sesión"):
             logout()
 
-    if selected == "Home":
-        st.markdown(inf_home)
+    if selected == "Inicio":
+        st.markdown(inf_inicio)
     elif selected == "Ordenar Informe de Banco":
         main_program()
     elif selected == "sumar recibos":
-        st.markdown(inf_home)
+        st.markdown(inf_inicio)
 
 
 def main():

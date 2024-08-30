@@ -1,4 +1,4 @@
-inf_home = """
+inf_inicio = """
     # 👋 ¡Bienvenido!
 
 Este es un proyecto de la materia **Ingeniería de Software** de la **Universidad Nacional**. En este programa podrás **organizar** los datos de los informes de bancos según el **Recibo** y el **Valor**, y también **sumar datos repetidos** en el informe.
