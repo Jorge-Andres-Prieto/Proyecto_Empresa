@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from login import login
 from leer_archivo import main_program
-
+from Home import inf_home
 # Configuración del tema
 st.set_page_config(
     page_title="HelPharma",
@@ -35,6 +35,9 @@ def main_menu(user):
         st.write("Bienvenido a HelPharma")
     elif selected == "Ordenar Informe de Banco":
         main_program()
+    elif selected == "sumar recibos":
+        st.markdown(inf_home)
+
 
 def main():
     if not st.session_state['logged_in']:
