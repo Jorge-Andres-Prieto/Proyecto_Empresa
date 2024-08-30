@@ -72,9 +72,9 @@ def main_program():
             )
 
     # Interfaz de usuario de Streamlit
-    st.title("Procesador de Excel")
+    st.title("Procesador de informe de bancos")
 
-    uploaded_file = st.file_uploader("Sube tu archivo Excel", type=["xlsx"])
+    uploaded_file = st.file_uploader("Sube tu informe de bancos en formato Excel", type=["xlsx"])
 
     if uploaded_file is not None:
         process_excel_file(uploaded_file)

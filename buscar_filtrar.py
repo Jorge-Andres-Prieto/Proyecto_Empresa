@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def buscar_y_filtrar():
-    st.title("Buscador y Filtro de Información")
+    st.title("Buscar y Filtrar Datos")
 
     # Subir archivo Excel
     uploaded_file = st.file_uploader("Sube tu archivo Excel", type=["xlsx"])

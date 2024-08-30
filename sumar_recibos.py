@@ -3,9 +3,9 @@ import pandas as pd
 import io
 
 def suma_recibos():
-    st.title("Suma de Recibos por Excel")
+    st.title("Suma de Recibos")
 
-    uploaded_file = st.file_uploader("Sube tu archivo Excel", type=["xlsx"])
+    uploaded_file = st.file_uploader("Sube tu informe de bancos en formato Excel", type=["xlsx"])
 
     if uploaded_file is not None:
         # Leer el archivo de Excel

@@ -3,6 +3,8 @@ import streamlit as st
 USERS = {
     "usuario1": "password1",
     "usuario2": "password2",
+    "Cartera": "CarteraIS123412",
+    "jorge": "jorge"
 }
 
 
