@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from login import login
 from leer_archivo import main_program
-from sumar_recibos import sumar_recibos_excel
+from sumar_recibos import suma_recibos
 from inicio import inf_inicio
 
 
@@ -40,7 +40,7 @@ def main_menu(user):
     elif selected == "💹 Ordenar Informe de Banco":
         main_program()
     elif selected == "💵 Sumar Recibos":
-        sumar_recibos_excel()
+        suma_recibos()
 
 
 def main():

@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-import os
+import io
 
-def sumar_recibos_excel():
-    st.title("Sumador de Recibos Excel")
+def suma_recibos():
+    st.title("Suma de Recibos por Excel")
 
     uploaded_file = st.file_uploader("Sube tu archivo Excel", type=["xlsx"])
 
@@ -12,32 +12,34 @@ def sumar_recibos_excel():
         df = pd.read_excel(uploaded_file)
 
         # Verificar si las columnas necesarias existen
-        if 'RECIBO' not in df.columns or 'Valor' not in df.columns:
-            st.error("El archivo debe contener las columnas 'RECIBO' y 'Valor'")
+        if 'RECIBO' not in df.columns or 'VALOR' not in df.columns:
+            st.error("El archivo debe contener las columnas 'RECIBO' y 'VALOR'")
             return
 
-        # Agrupar por RECIBO y sumar los valores
-        df_sumado = df.groupby('RECIBO')['Valor'].sum().reset_index()
+        # Agrupar por RECIBO y sumar los VALORES
+        df_sumado = df.groupby('RECIBO')['VALOR'].sum().reset_index()
 
         # Crear un nuevo nombre de archivo
-        nombre_original = os.path.splitext(uploaded_file.name)[0]
-        nuevo_nombre = f"Suma de recibos de - {nombre_original}.xlsx"
+        nuevo_nombre = f"Suma de recibos de - {uploaded_file.name}"
 
-        # Guardar el nuevo dataframe en un archivo de Excel
-        df_sumado.to_excel(nuevo_nombre, index=False)
+        # Crear un objeto BytesIO para guardar el Excel en memoria
+        output = io.BytesIO()
 
-        # Botón para descargar el archivo
-        with open(nuevo_nombre, "rb") as file:
-            st.download_button(
-                label="Descargar archivo procesado",
-                data=file,
-                file_name=nuevo_nombre,
-                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-            )
+        # Guardar el DataFrame sumado en un nuevo archivo de Excel
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
+            df_sumado.to_excel(writer, index=False, sheet_name='Suma de Recibos')
 
-        # Eliminar el archivo temporal después de la descarga
-        os.remove(nuevo_nombre)
+        # Preparar el archivo para descarga
+        output.seek(0)
 
-        # Mostrar una vista previa de los datos
-        st.write("Vista previa de los datos sumados:")
+        # Botón de descarga
+        st.download_button(
+            label="Descargar archivo procesado",
+            data=output,
+            file_name=nuevo_nombre,
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
+
+        # Mostrar una vista previa de los resultados
+        st.write("Vista previa de los resultados:")
         st.dataframe(df_sumado)
