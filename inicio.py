@@ -1,7 +1,7 @@
 inf_inicio = """
     # 👋 ¡Bienvenido!
 
-Este es un proyecto de la materia **Ingeniería de Software** de la **Universidad Nacional**. En este programa podrás **organizar** los datos de los informes de bancos según el **Recibo** y el **Valor**, y también **sumar datos repetidos** en el informe.
+Este es un proyecto de la materia **Ingeniería de Software** de la **Universidad Nacional**. podrás **organizar** los datos de los informes de bancos según el **Recibo** y el **Valor**. Además, podrás **sumar los valores** correspondientes a los mismos recibos, y además **buscar y filtrar** datos específicos dentro de estos archivos.
 
 ## 🚀 Instrucciones de Uso
 
