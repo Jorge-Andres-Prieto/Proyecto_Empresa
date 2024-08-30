@@ -1,0 +1,16 @@
+[theme]
+base="dark"
+primaryColor="#003041"  # Azul claro
+backgroundColor="#fcfdff"  # Blanco ligeramente azulado
+secondaryBackgroundColor="#4c85b7"
+textColor="#003041"  # Azul oscuro
+font="sans serif"
+#"#008fc4"  # Azul claro para elementos interactivos
+#"#003041"  # Azul oscuro para el fondo principal
+#"#ff0202"  # Rojo para acentos y elementos secundarios
+#"#fcfdff"  # Blanco ligeramente azulado para el texto principal
+#'#4c85b7'  # Azul claro 2
+[theme.fonts]
+heading = "Arial, sans-serif"
+base = "Arial, sans-serif"
+code = "Monospace"
