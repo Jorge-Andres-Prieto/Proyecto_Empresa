@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 from login import login
 from leer_archivo import main_program
 from sumar_recibos import suma_recibos
+from buscar_filtrar import buscar_y_filtrar
 from inicio import inf_inicio
 
 
@@ -41,6 +42,8 @@ def main_menu(user):
         main_program()
     elif selected == "💵 Sumar Recibos":
         suma_recibos()
+    elif selected == "🔍 Buscar/Filtrar Datos":
+        buscar_y_filtrar()
 
 
 def main():
