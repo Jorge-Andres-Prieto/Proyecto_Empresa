@@ -5,6 +5,7 @@ from leer_archivo import main_program
 from sumar_recibos import suma_recibos
 from buscar_filtrar import buscar_y_filtrar
 from inicio import inf_inicio
+from inicion_notificacion import mostrar_recordatorio
 
 
 # Configuración del tema
@@ -37,6 +38,7 @@ def main_menu(user):
             logout()
 
     if selected == "🏡 Inicio":
+        mostrar_recordatorio()
         st.markdown(inf_inicio)
     elif selected == "💹 Ordenar Informe de Banco":
         main_program()

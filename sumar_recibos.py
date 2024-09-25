@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from notificacion import enviar
+from login import login
 import io
 
 def suma_recibos():
@@ -40,6 +42,4 @@ def suma_recibos():
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
 
-        # Mostrar una vista previa de los resultados
-        st.write("Vista previa de los resultados:")
-        st.dataframe(df_sumado)
+        enviar(nuevo_nombre)
