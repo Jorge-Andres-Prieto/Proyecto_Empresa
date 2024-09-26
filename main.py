@@ -6,6 +6,8 @@ from sumar_recibos import suma_recibos
 from buscar_filtrar import buscar_y_filtrar
 from inicio import inf_inicio
 from inicion_notificacion import mostrar_recordatorio
+from sumar_categoria import sumarcategoria
+from consiliacion import app
 
 
 # Configuración del tema
@@ -28,8 +30,8 @@ def main_menu(user):
     with st.sidebar:
         selected = option_menu(
             menu_title=None,
-            options=["🏡 Inicio", "💹 Ordenar Informe de Banco", "💵 Sumar Recibos", "🔍 Buscar/Filtrar Datos"],
-            icons=["🏡", "💹", "💵", "🔍"],
+            options=["🏡 Inicio", "💹 Ordenar Informe de Banco", "💵 Sumar Recibos", "🔍 Buscar/Filtrar Datos", "🏦 Consiliación", "💲 Sumar por Categoría"],
+            icons=["🏡", "💹", "💵", "🔍", "🏦", "💲"],
             menu_icon="list",
             default_index=0
         )
@@ -46,7 +48,10 @@ def main_menu(user):
         suma_recibos()
     elif selected == "🔍 Buscar/Filtrar Datos":
         buscar_y_filtrar()
-
+    elif selected == "🏦 Consiliación":
+        app()
+    elif selected == "💲 Sumar por Categoría":
+        sumarcategoria()
 
 def main():
     if not st.session_state['logged_in']:
