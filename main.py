@@ -53,6 +53,7 @@ def main_menu(user):
     elif selected == "💲 Sumar por Categoría":
         sumarcategoria()
 
+
 def main():
     if not st.session_state['logged_in']:
         login()
